@@ -1,0 +1,12 @@
+input_dir: null
+orientation: landscape
+output_dir: null
+overwrite: false
+verbose: false
+page_numbers: true
+page_number_font_size: 64
+title_text: null
+title_font_size: 160
+presenter_name: "Prof. Dr. Peter Felfer"
+presenter_affiliation: "Institute for General Materials Properties, FAU Erlangen"
+title_date_format: "%d %B %Y"

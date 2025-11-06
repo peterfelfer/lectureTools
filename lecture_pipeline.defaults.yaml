@@ -1,0 +1,49 @@
+image_to_pdf:
+  enabled: true
+  config_yaml: image_series_to_pdf.defaults.yaml
+  input_dir: null          # set to the folder containing slide images
+  directory: null          # legacy key, optional
+  output_dir: null         # optional output folder for the generated PDF
+  orientation: null        # override A4 orientation (landscape|portrait)
+  overwrite: null          # set true to allow replacing existing PDFs
+  verbose: null            # set true for progress logs
+  page_numbers: null       # set false to disable numbering
+  page_number_font_size: null  # override numbering font size
+  title_text: null         # optional title page text
+  title_font_size: null    # override title font size
+  presenter_name: null
+  presenter_affiliation: null
+  title_date_format: null
+  extra_args: []           # additional CLI arguments if needed
+
+audio_transcription:
+  enabled: true
+  config_yaml: av_to_md.defaults.yaml
+  input_file: null         # single media file
+  input_files: []          # list of media files to stitch
+  input_dir: null          # directory of media files
+  input_list: null         # text file with one path per line
+  output_list: null        # custom mapping output when using input_list
+  output_file: null        # notes output path for single-file mode
+  combine_transcriptions: false
+  progress: null
+  verbose: null
+  quiet: null
+  debug_dir: null
+  extra_args: []           # additional CLI arguments if needed
+
+final_document:
+  enabled: true
+  output: null             # final PDF path (defaults to <lecture>_bundle.pdf)
+  include_slides: true
+  include_full_transcript: false
+  include_summary: true
+  title_text: null
+  presenter_name: null
+  presenter_affiliation: null
+  title_date_format: null
+  title_font_size: null
+  summary_title: "Lecture Summary"
+  transcript_title: "Full Transcript"
+  section_heading_font_size: 96
+  section_body_font_size: 64

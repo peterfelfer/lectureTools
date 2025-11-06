@@ -1,0 +1,29 @@
+input_file: ""         # single media file path
+input_files: []        # list of media files to concatenate
+input_dir: ""          # folder of media files
+input_list: ""         # text file with one path per line
+output_list: ""        # results mapping when using --input-list
+output_file: ""        # notes output path (single-file mode)
+model: gpt-4o-mini-transcribe  # ASR model (e.g. gpt-4o-mini-transcribe, whisper-1)
+language: ""           # optional language hint (ISO-639-1)
+asr_prompt: ""  # context prompt
+chunk_mins: 20          # chunk duration in minutes
+no_chunk: false         # disable chunking? true | false
+max_retries: 5          # API retry attempts
+retry_initial_wait: 3.0 # initial backoff seconds
+retry_backoff: 2.0      # exponential backoff factor
+audio_codec: mp3        # options: mp3 | wav | flac | aac
+bitrate: 96k            # extraction bitrate
+keep_audio: false       # keep intermediate audio? true | false
+summary_words: 2000     # target note length (words)
+summary_language: same  # options: same | auto | <ISO code>
+summary_model: gpt-5  # model for note generation
+domain_hint: "materials science"  # context for summariser
+target_level: "Advanced undergraduate/early graduate lecture notes."   # audience description
+progress: false         # show progress bar? true | false
+verbose: false          # verbose logging? true | false
+quiet: false            # suppress non-critical output? true | false
+show_ffmpeg: false      # print ffmpeg commands? true | false
+debug_dir: ""           # optional directory for debug artifacts
+dry_run: false          # plan only? true | false
+combine_transcriptions: false  # merge outputs after batch run? true | false

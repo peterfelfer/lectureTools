@@ -15,7 +15,7 @@ retry_backoff: 2.0      # exponential backoff factor
 audio_codec: mp3        # options: mp3 | wav | flac | aac
 bitrate: 96k            # extraction bitrate
 keep_audio: false       # keep intermediate audio? true | false
-summary_words: 2000     # target note length (words)
+summary_words: 1000     # target note length (words)
 summary_language: same  # options: same | auto | <ISO code>
 summary_model: gpt-5  # model for note generation
 domain_hint: "materials science"  # context for summariser

@@ -5,3 +5,4 @@ tqdm>=4.66.0
 imageio-ffmpeg>=0.4.9
 pypdf>=3.9.0
 matplotlib>=3.8.0
+tkinterdnd2>=0.3.0

@@ -5,6 +5,7 @@ Utilities for preparing lecture material:
 - Convert ordered slide images (PNG/JPEG/KRA) into A4 PDFs.
 - Transcribe lecture audio/video into full transcripts and cleaned-up notes.
 - Orchestrate both steps via a single, YAML-configured pipeline.
+- Run everything from a minimal desktop GUI (`lecture_gui.py`) that supports drag-and-drop folders/files and a password-style box for the OpenAI API key.
 
 ## Pipeline
 
@@ -90,6 +91,15 @@ final_document:
 - `av_to_md.defaults.yaml` – transcription, summarisation, and retry settings.
 
 All scripts honour `--config-yaml` (or `--config` for the pipeline) so you can maintain per-lecture variants without editing code.
+
+## Desktop GUI
+
+- Launch: `python3 lecture_gui.py`
+  - Drag a lecture folder (or a single audio/video file) onto the window or use the browse buttons.
+  - Paste/drop your `OPENAI_API_KEY` into the password-style field; it is only injected into the environment for the current run and is not saved to disk.
+  - Click **Run Lecture Pipeline** to execute the same workflow as the CLI. Logs stream into the lower pane; use **Stop** to terminate the background process.
+- Drag-and-drop uses [`tkinterdnd2`](https://pypi.org/project/tkinterdnd2/) (installed via `pip install -r requirements.txt`). Without it, the GUI still works via the browse buttons.
+- Create a macOS `.app`: `pyinstaller --windowed --name "Lecture Tools" lecture_gui.py` (ships a self-contained app bundle you can pin to the Dock).
 
 ## Setup & Checks
 
